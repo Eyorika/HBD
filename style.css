@@ -1,0 +1,344 @@
+body {
+  background-image: linear-gradient(#dfcaca, #030202);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+  text-align: center;
+  background-color: rgb(121, 81, 81);
+  padding: 20px;
+  border-radius: 15px;
+  animation: color-changebg 5s infinite;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  height: auto;
+
+}
+
+
+.text-effect {
+  font-size: 2.8rem;
+  color: #4a90e2;
+  animation: color-change 3s infinite;
+  margin: 20px 0;
+}
+
+.wrapper {
+  position: relative;
+  width: 240px;
+  height: 480px;
+  left: 50px;
+}
+
+.cake {
+  position: absolute;
+  bottom: 0;
+}
+
+.lyr {
+  width: 240px;
+  height: 96px;
+  position: absolute;
+  background-color: currentColor;
+  border-radius: 120px / 24px ;
+}
+
+.lyr-1 {
+  color: #9C7041;
+  bottom: 0;  
+  box-shadow: 0 1px 2px solid #262e36;
+
+}
+
+.lyr-2 {
+  color: #652D20;
+  bottom: 48px;
+}
+
+.lyr-3 {
+  color: #8A553B;
+  bottom: 96px;
+  background-image: radial-gradient(ellipse 7.5rem 1.5rem at 7.5rem 1.5rem, gold, gold 5%, #E99788 100%, transparent);
+}
+
+.candle {
+  position: absolute;
+  background-color: red;
+  width:32px;
+  left: 104px;
+  height: 160px;
+  bottom: 160px;
+  border-radius: 20px / 10px;
+  background-image: repeating-linear-gradient(45deg, white, white 10%, transparent 10%, transparent 20%);
+}
+
+.candle::before {
+  content: '';
+  position: absolute;
+  background-color: black;
+  width: 4px;
+  height: 22px;
+  border-radius: 4px / 2.4px;
+  left: 15px;
+  top: -22px;
+}
+
+.candle::after {
+   background-color: red;
+   display: block;
+   content: '';
+   width: 32px;
+   height: 16px;
+   border-radius: 50%;
+}
+
+.fram {
+  position: absolute;
+  left: 104px;
+}
+
+
+.smoke {
+  color: currentColor;
+  background-color: currentColor;
+  top: 125px;
+  width: 6px;
+  height: 6px;
+  position: relative;
+  animation-name: burn-smoke;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
+
+.smk-1 {
+  left: 8px;
+  animation-duration: .5s;
+}
+
+.smk-2 {
+  left: -8px;
+  animation-duration: .6s;
+}
+
+.smk-3 {
+  left: 16px;
+   animation-duration: .7s;
+}
+
+.smk-4 {
+  left: 24px;
+  animation-duration: .8s;
+}
+.smk-5 {
+  left: 32px;
+  animation-duration: .9s;
+}
+
+
+.flm-part {
+  background-color: currentColor;
+  border-color: currentColor;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  position: relative;
+  transform: rotate(60deg) skewX(0deg) scale(1);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.flm-part.fliped {
+  transform: rotate(120deg) skewX(0deg) scale(1);
+}
+
+.flm-part::before {
+  content: '';
+  position: absolute;
+  border-radius: 0 0 0 100%;
+  border-bottom-style: solid;
+  border-bottom-color:inherit;
+  border-bottom-width: 32px;
+  width: 32px;
+  height: 8px;
+  left: -16px;
+  top: -8px;
+}
+
+.flm-part.fliped::before  {
+  border-radius: 100% 0 0 0;
+  border-bottom: 0 solid transparent;
+  border-top-style: solid;
+  border-top-color: inherit;
+   border-top-width:32px;
+   width: 32px;
+  height: 8px;
+  left: -16px;
+  top: 0px;
+}
+
+.red {
+  color: red;
+  top: 84.4px;
+  opacity: 0.7;
+  animation-name: burn-red;
+  animation-duration: 1s;
+}
+
+.orange {
+  color: orange;
+  top: 57px;
+  opacity: 0.8;
+  box-shadow: 0 0 16px orange;
+   animation-name: burn-orange;
+  animation-duration: 0.4s;
+}
+
+.yellow {
+  color: yellow;
+  top: 28px;
+  opacity: 0.9;
+  box-shadow: 0 0 16px yellow;
+   animation-name: burn-yellow;
+  animation-duration: 1.6s;
+}
+
+.white {
+  color: white;
+  box-shadow: 0 0 16px white;
+   animation-name: burn-white;
+  animation-duration: 1.8s;
+}
+
+
+@keyframes burn-smoke {
+  0% { transform: rotate(0deg) scale(1);  opacity: 1; }
+  100% {transform: rotate(360deg) scale(4); opacity: 0; top: 0;}
+}
+
+@keyframes burn-red {
+  0% { transform: rotate(120deg) skewX(0deg) scale(1.8)}
+  20% { transform: rotate(118deg) skewX(5deg) scale(2)}
+  40% { transform: rotate(120deg) skewX(0deg) scale(1.8)}
+  60% { transform: rotate(122deg) skewX(-5deg) scale(2)}
+  100% { transform: rotate(120deg) skewX(0deg) scale(1.8)}
+}
+
+@keyframes  burn-white {
+  0% { transform: rotate(60deg) skewX(0deg) scale(1)}
+  20% { transform: rotate(50deg) skewX(-3deg) scale(1.1)}
+  40% { transform: rotate(60deg) skewX(0deg) scale(1)}
+  60% { transform: rotate(70deg) skewX(3deg) scale(1.1)}
+  100% {transform: rotate(60deg) skew(0deg) scale(1)}
+}
+
+@keyframes burn-yellow {
+  0% { transform: rotate(120deg) skewX(0deg) scale(1.4)}
+  20% { transform: rotate(110deg) skewX(10deg) scale(1.5)}
+  40% { transform: rotate(120deg) skewX(0deg) scale(1.4)}
+  60% { transform: rotate(130deg) skewX(-10deg) scale(1.5)}
+  100% {transform: rotate(120deg) skew(0deg) scale(1.4)}
+}
+
+@keyframes burn-orange {
+  0% { transform: rotate(65deg) skewX(0deg) scale(1.6)}
+  20% { transform: rotate(60deg) skewX(-15deg) scale(1.7)}
+  40% { transform: rotate(65deg) skewX(0deg) scale(1.6)}
+  60% { transform: rotate(70deg) skewX(2deg) scale(1.7)}
+  100% {transform: rotate(65deg) skew(0deg) scale(1.6)}
+}
+
+
+@keyframes color-change {
+  0%, 100% { color: #4a90e2; }
+  50% { color: #e94a3f; }
+}
+@keyframes color-changebg{
+  0%, 250%{
+    background-color:bisque;
+    
+  }
+  50%,75%{
+    background-color: rgb(59, 71, 67);
+  }
+  100%{
+    background-color: #575e52;
+  }
+}
+.text-effect {
+  font-size: 24px;
+  background: linear-gradient(to right, #be8924 0%, #d64908d0 100%);
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+  animation: typing 5s steps(40, end), blink-caret .75s step-end infinite;
+  margin: 20px 0;
+justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: .15em solid orange;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent;
+    text-align: center;
+    color: #b3c9e2;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  100% { color: rgb(155, 128, 81);text-align: center; }
+}
+
+.quotes {
+  font-size: 18px;
+  color: #e4e4e4;
+  height: 50px;
+  left: 65px;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+
+.quote, p {
+  position: absolute;
+  opacity: 0;
+  animation: show-quote 6s infinite;
+  background: linear-gradient(to right, #eed7d7 0%, #ffc3a0 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 1.5rem;
+  animation: color-change infinite;
+  animation-timing-function: ease-in-out;
+}
+.quote, h1{
+  font-size: 1rem;
+}
+@keyframes show-quote {
+  0%, 53% { opacity: 1; transform: translateY(0); 
+  color: #af1e1e;    
+  text-align: center;
+  justify-content: center;
+}
+  33.33% { opacity: 0; transform: translateY(-100%);
+   }
+   50%{
+    color: hwb(0 27% 17%);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+   }
+   100%{
+    color: #af1e1e;
+    justify-content: center;
+    text-align: center;
+   }
+}
